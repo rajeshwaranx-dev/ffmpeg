@@ -9,14 +9,15 @@ import os
 # ── FILE ─────────────────────────────────────────────────────────────────────
 SETTINGS_FILE = "settings.json"
 
-# ── DEFAULTS ──────────────────────────────────────────────────────────────────
+# ── DEFAULTS ─────────────────────────────────────────────────────────────────
 DEFAULT_CHANNEL_NAME   = "@YourChannel"
 DEFAULT_WATERMARK_TEXT = "Join @YourChannel for more movies"
 
-# ── 2 GB SUPPORT ─────────────────────────────────────────────────────────────
-# Set LOCAL_API_BASE_URL env var when running with a local Bot API server.
-# Leave empty to use Telegram's cloud servers (50 MB limit).
-LOCAL_API_BASE_URL = os.getenv("LOCAL_API_BASE_URL", "")
+# ── PYROGRAM CREDENTIALS ─────────────────────────────────────────────────────
+# Get from https://my.telegram.org → API Development Tools → Create App
+# Pyrogram uses MTProto directly — supports up to 2 GB, no local server needed.
+API_ID   = os.getenv("TELEGRAM_API_ID",   "YOUR_API_ID")    # e.g. "12345678"
+API_HASH = os.getenv("TELEGRAM_API_HASH", "YOUR_API_HASH")  # e.g. "abcdef1234567890"
 
 # ── WATERMARK VISUAL SETTINGS ─────────────────────────────────────────────────
 WATERMARK_FONT_SIZE   = 28
@@ -78,4 +79,4 @@ def reset_user_settings(user_id: int) -> dict:
         "channel_name":   DEFAULT_CHANNEL_NAME,
         "watermark_text": DEFAULT_WATERMARK_TEXT,
     }
-
+    
