@@ -32,7 +32,7 @@ from telegram.ext import (
 )
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8714275910:AAErRES-hHnDW7uZjpuFOVcdqzofKKP7nR4")
 
 # Watermark text shown on the video
 WATERMARK_TEXT = "Join Telegram channel for more movies - @yourchannel"
@@ -194,7 +194,7 @@ async def handle_unsupported(update: Update, context: ContextTypes.DEFAULT_TYPE)
 
 # ── MAIN ─────────────────────────────────────────────────────────────────────
 def main() -> None:
-    if BOT_TOKEN == "8714275910:AAErRES-hHnDW7uZjpuFOVcdqzofKKP7nR4":
+    if BOT_TOKEN == "YOUR_BOT_TOKEN_HERE":
         raise SystemExit(
             "❌  Set your bot token!\n"
             "    Edit BOT_TOKEN in the script, or:\n"
