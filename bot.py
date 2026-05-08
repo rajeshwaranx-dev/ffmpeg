@@ -41,7 +41,7 @@ from config import (
 from processor import process_video_async
 
 # ── TOKEN ─────────────────────────────────────────────────────────────────────
-BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "YOUR_BOT_TOKEN_HERE")
+BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN", "8714275910:AAErRES-hHnDW7uZjpuFOVcdqzofKKP7nR4")
 
 # ── SIZE LIMIT ────────────────────────────────────────────────────────────────
 # 2 GB requires LOCAL_API_BASE_URL to be set (local Bot API server).
