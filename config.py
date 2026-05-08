@@ -16,8 +16,8 @@ DEFAULT_WATERMARK_TEXT = "Join @YourChannel for more movies"
 # ── PYROGRAM CREDENTIALS ─────────────────────────────────────────────────────
 # Get from https://my.telegram.org → API Development Tools → Create App
 # Pyrogram uses MTProto directly — supports up to 2 GB, no local server needed.
-API_ID   = os.getenv("TELEGRAM_API_ID",   "YOUR_API_ID")    # e.g. "12345678"
-API_HASH = os.getenv("TELEGRAM_API_HASH", "YOUR_API_HASH")  # e.g. "abcdef1234567890"
+API_ID   = os.getenv("TELEGRAM_API_ID",   "23361081")    # e.g. "12345678"
+API_HASH = os.getenv("TELEGRAM_API_HASH", "0605c5395b91ead763072251e20c3417")  # e.g. "abcdef1234567890"
 
 # ── WATERMARK VISUAL SETTINGS ─────────────────────────────────────────────────
 WATERMARK_FONT_SIZE   = 28
