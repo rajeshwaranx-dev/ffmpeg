@@ -1,34 +1,37 @@
 """
-config.py — Settings management
-Stores per-user settings in settings.json
+config.py — All settings in one place
+Fill in your credentials below, then run: python3 bot.py
 """
 
 import json
 import os
 
-# ── FILE ─────────────────────────────────────────────────────────────────────
-SETTINGS_FILE = "settings.json"
+# ── CREDENTIALS ───────────────────────────────────────────────────────────────
+# Get API_ID and API_HASH from https://my.telegram.org → API Development Tools
+# Get BOT_TOKEN from @BotFather on Telegram
 
-# ── DEFAULTS ─────────────────────────────────────────────────────────────────
+API_ID    = "23361081"           # e.g. "12345678"
+API_HASH  = "0605c5395b91ead763072251e20c3417"         # e.g. "abcdef1234567890abcdef1234567890"
+BOT_TOKEN = "8714275910:AAErRES-hHnDW7uZjpuFOVcdqzofKKP7nR4"   # e.g. "123456789:AAFxxxxxxxxxxxxxxxxxxxxxxxx"
+
+# ── DEFAULTS ──────────────────────────────────────────────────────────────────
 DEFAULT_CHANNEL_NAME   = "@YourChannel"
 DEFAULT_WATERMARK_TEXT = "Join @YourChannel for more movies"
-
-# ── PYROGRAM CREDENTIALS ─────────────────────────────────────────────────────
-# Get from https://my.telegram.org → API Development Tools → Create App
-# Pyrogram uses MTProto directly — supports up to 2 GB, no local server needed.
-API_ID   = os.getenv("TELEGRAM_API_ID",   "23361081")    # e.g. "12345678"
-API_HASH = os.getenv("TELEGRAM_API_HASH", "0605c5395b91ead763072251e20c3417")  # e.g. "abcdef1234567890"
 
 # ── WATERMARK VISUAL SETTINGS ─────────────────────────────────────────────────
 WATERMARK_FONT_SIZE   = 28
 WATERMARK_FONT_COLOR  = "white"
 WATERMARK_BOX_COLOR   = "black@0.4"
 WATERMARK_BOX_ENABLED = True
-WATERMARK_POSITION    = "bottom_center"   # bottom_center | bottom_left | top_center | center
+WATERMARK_POSITION    = "bottom_center"  # bottom_center | bottom_left | top_center | center
 WATERMARK_START_SEC   = 0
 WATERMARK_END_SEC     = 10
 
+# ── SETTINGS FILE ─────────────────────────────────────────────────────────────
+SETTINGS_FILE = "settings.json"
+
 # ─────────────────────────────────────────────────────────────────────────────
+
 
 def _load() -> dict:
     if os.path.exists(SETTINGS_FILE):
@@ -43,7 +46,6 @@ def _save(data: dict) -> None:
 
 
 def get_user_settings(user_id: int) -> dict:
-    """Return settings for a user, falling back to defaults."""
     all_settings = _load()
     uid = str(user_id)
     if uid not in all_settings:
@@ -55,7 +57,6 @@ def get_user_settings(user_id: int) -> dict:
 
 
 def set_user_settings(user_id: int, **kwargs) -> dict:
-    """Update one or more settings for a user and return updated dict."""
     all_settings = _load()
     uid = str(user_id)
     if uid not in all_settings:
@@ -69,7 +70,6 @@ def set_user_settings(user_id: int, **kwargs) -> dict:
 
 
 def reset_user_settings(user_id: int) -> dict:
-    """Reset user settings to defaults."""
     all_settings = _load()
     uid = str(user_id)
     if uid in all_settings:
