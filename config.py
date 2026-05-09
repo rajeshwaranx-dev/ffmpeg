@@ -13,6 +13,8 @@ import os
 API_ID    = "23361081"           # e.g. "12345678"
 API_HASH  = "0605c5395b91ead763072251e20c3417"         # e.g. "abcdef1234567890abcdef1234567890"
 BOT_TOKEN = "8714275910:AAErRES-hHnDW7uZjpuFOVcdqzofKKP7nR4"   # e.g. "123456789:AAFxxxxxxxxxxxxxxxxxxxxxxxx"
+ADMIN_USER_ID = 5371238852       # your Telegram ID (from @userinfobot)
+ADMIN_USERNAME = "@Master_xkid" #
 
 # ── DEFAULTS ──────────────────────────────────────────────────────────────────
 DEFAULT_CHANNEL_NAME   = "@YourChannel"
